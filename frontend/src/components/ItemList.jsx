@@ -3,7 +3,7 @@ import axios from 'axios';
 import Item from './Item';
 import ItemForm from './ItemForm';
 
-const API_URL = 'http://localhost:8000/items/';
+const API_URL = 'http://18.117.99.135:8000/items/';
 
 function ItemList() {
   const [items, setItems] = useState([]);
