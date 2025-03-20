@@ -25,8 +25,8 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  width: 100vw; 
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;

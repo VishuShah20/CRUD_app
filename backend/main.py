@@ -7,19 +7,18 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# Enable CORS for frontend-backend communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for now
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Create database tables
+#create tables in DB
 Base.metadata.create_all(bind=engine)
 
-# Dependency for getting DB session
+# dependency to get DB session
 def get_db():
     db = SessionLocal()
     try:
@@ -27,7 +26,7 @@ def get_db():
     finally:
         db.close()
 
-# Pydantic model for request body
+# Pydantic model for body request
 class ItemCreate(BaseModel):
     name: str
     description: str
@@ -63,7 +62,7 @@ def read_item(item_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Item not found")
     return item
 
-#  Update item by ID
+#  update item by ID
 @app.put("/items/{item_id}")
 def update_item(item_id: int, item: ItemUpdate, db: Session = Depends(get_db)):
     db_item = db.query(models.Item).filter(models.Item.id == item_id).first()
@@ -77,7 +76,7 @@ def update_item(item_id: int, item: ItemUpdate, db: Session = Depends(get_db)):
     db.refresh(db_item)
     return db_item
 
-#  Delete item by ID
+#  delete item by ID
 @app.delete("/items/{item_id}")
 def delete_item(item_id: int, db: Session = Depends(get_db)):
     db_item = db.query(models.Item).filter(models.Item.id == item_id).first()

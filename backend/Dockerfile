@@ -1,10 +1,10 @@
-# Use official Python image
+# official python image
 FROM python:3.10
 
-# Set working directory
+# working directory set to /app
 WORKDIR /app
 
-# Copy backend files
+# Copy backend files to /app
 COPY . /app
 
 RUN apt-get update && apt-get install -y netcat-openbsd
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y netcat-openbsd
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose backend port
+# backend port expose
 EXPOSE 8000
 
 # Run FastAPI app with Uvicorn

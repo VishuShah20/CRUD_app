@@ -50,7 +50,7 @@ function ItemList() {
     }
   };
 
-  // 🔹 Add these two helper functions
+  // helper functions
   const handleEdit = (item) => {
     setEditingItem(item);
     setNewItem({

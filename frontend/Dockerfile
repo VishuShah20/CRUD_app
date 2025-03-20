@@ -1,22 +1,22 @@
 # Use Node.js image
 FROM node:18
 
-# Set working directory
+# set working directory
 WORKDIR /app
 
-# Copy frontend files
+#Copy frontend files
 COPY . /app
 
-# Install dependencies
+#install dependencies
 RUN npm install
 
-# Build the frontend
+# build frontend
 RUN npm run build
 
-# Install a lightweight HTTP server
+# lightweight http server 
 RUN npm install -g serve
 
-# Expose frontend port
+# frontend port
 EXPOSE 5173
 
 # Serve the built React app

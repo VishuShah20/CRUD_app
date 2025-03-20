@@ -1,11 +1,10 @@
-/* Reset Default Styles */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Make the whole page part of the app */
 /* body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
@@ -18,8 +17,8 @@
 } */
 
 .app-container {
-  width: 100vw;  /* Full screen width */
-  height: 100vh; /* Full screen height */
+  width: 100vw;  
+  height: 100vh; 
   background: white;
   padding: 20px;
   box-shadow: none;
@@ -28,18 +27,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Keeps content visible at the top */
-  overflow-y: auto; /* Allows scrolling if content overflows */
+  justify-content: flex-start; /* content visible at the top */
+  overflow-y: auto; /* allow scrolling if content overflows*/
 }
 
-/* Headings */
+/* Header */
 h1 {
   color: #222;
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-/* Form Styles */
+/* Item Form */
 .item-form {
   display: flex;
   flex-direction: column;
